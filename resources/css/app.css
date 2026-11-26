@@ -2,8 +2,51 @@
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@layer components {
+    .kartu {
+        @apply rounded-xl border border-zinc-200/80 bg-white;
+    }
+
+    .label-input {
+        @apply mb-1.5 block text-sm font-medium text-zinc-800;
+    }
+
+    .kolom-input {
+        @apply w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2.5 text-sm text-zinc-900 transition placeholder:text-zinc-400 focus:border-[#14532D] focus:outline-none focus:ring-1 focus:ring-[#14532D];
+    }
+
+    .tombol,
+    .tombol-utama,
+    .tombol-gelap,
+    .tombol-garis,
+    .tombol-bahaya {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#14532D] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .tombol-utama {
+        @apply bg-[#14532D] text-white hover:bg-[#0F3F22];
+    }
+
+    .tombol-gelap {
+        @apply bg-zinc-900 text-white hover:bg-zinc-800;
+    }
+
+    .tombol-garis {
+        @apply border border-zinc-200 bg-white text-zinc-800 hover:border-zinc-300 hover:bg-zinc-50;
+    }
+
+    .tombol-bahaya {
+        @apply bg-red-700 text-white hover:bg-red-800;
+    }
 }

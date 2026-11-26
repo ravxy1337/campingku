@@ -3,34 +3,37 @@
 <head>
     @include('partials.kepala')
 </head>
-<body class="h-full font-sans text-zinc-900 antialiased">
+<body class="h-full bg-white font-sans text-zinc-900 antialiased">
     <div class="flex min-h-full">
-        {{-- Panel kiri bertema hutan --}}
-        <aside class="relative hidden w-[44%] overflow-hidden bg-emerald-900 lg:flex lg:flex-col lg:justify-between lg:p-12">
-            <x-pola-latar />
-            <a href="{{ route('beranda') }}" class="relative"><x-merek terang /></a>
+        {{-- Panel kiri: fotografi outdoor full-height dengan overlay gelap halus --}}
+        <aside class="relative hidden w-[46%] overflow-hidden bg-zinc-950 lg:flex lg:flex-col lg:justify-between lg:p-12">
+            <img
+                src="https://images.unsplash.com/photo-1760715143101-74df20342df3?auto=format&fit=crop&w=1400&q=80"
+                alt="Tenda camping di lembah pegunungan saat pagi hari"
+                class="absolute inset-0 h-full w-full object-cover object-center"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-zinc-950/35 to-zinc-950/55"></div>
 
-            <div class="relative max-w-md">
-                <h2 class="text-4xl font-bold leading-tight tracking-tight text-white">Siapkan petualangan, kami siapkan alatnya.</h2>
-                <p class="mt-4 text-base leading-relaxed text-emerald-100/80">Cek ketersediaan secara real-time, booking online, lalu ambil langsung di toko.</p>
+            <a href="{{ route('beranda') }}" class="relative z-10 w-fit">
+                <x-merek terang />
+            </a>
 
-                <dl class="mt-10 grid grid-cols-3 gap-4">
-                    @foreach ([['Alat', 'Siap sewa'], ['Online', 'Booking 24 jam'], ['Aman', 'Jaminan KTP']] as [$judulFitur, $isiFitur])
-                        <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-                            <dt class="text-sm font-semibold text-white">{{ $judulFitur }}</dt>
-                            <dd class="mt-1 text-xs text-emerald-100/70">{{ $isiFitur }}</dd>
-                        </div>
-                    @endforeach
-                </dl>
+            <div class="relative z-10 max-w-md">
+                <h2 class="text-3xl font-semibold leading-snug tracking-tight text-white">
+                    Siapkan perjalanan Anda, kami siapkan perlengkapannya.
+                </h2>
+                <p class="mt-3 text-sm leading-relaxed text-zinc-200/85">
+                    Cek ketersediaan stok harian secara langsung, pesan online, lalu ambil perlengkapan langsung di toko.
+                </p>
             </div>
-
-            <p class="relative text-xs text-emerald-100/60">&copy; {{ now()->year }} RimbaCamp</p>
         </aside>
 
-        {{-- Panel kanan formulir --}}
-        <main class="flex flex-1 flex-col justify-center px-6 py-12 sm:px-12">
+        {{-- Panel kanan: formulir bersih --}}
+        <main class="flex flex-1 flex-col justify-center bg-white px-6 py-12 sm:px-12">
             <div class="mx-auto w-full max-w-md">
-                <a href="{{ route('beranda') }}" class="mb-10 inline-block lg:hidden"><x-merek /></a>
+                <a href="{{ route('beranda') }}" class="mb-10 inline-block lg:hidden">
+                    <x-merek />
+                </a>
                 <x-notifikasi />
                 @yield('konten')
             </div>
@@ -38,4 +41,3 @@
     </div>
 </body>
 </html>
-
