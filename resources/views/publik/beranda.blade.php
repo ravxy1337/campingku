@@ -11,7 +11,7 @@
             <x-ikon nama="toko" kelas="h-3.5 w-3.5" />
             Ambil langsung di toko
         </span>
-        <h1 class="mt-5 text-3xl font-bold tracking-tight text-white sm:text-5xl">Perlengkapan camping siap menemani perjalananmu.</h1>
+        <h1 class="mt-5 text-3xl font-bold tracking-tight text-white sm:text-5xl">Fokus nikmatin view dan kopi,urusan tenda kami yang handle.</h1>
         <p class="mt-4 text-base text-emerald-100/80">Lihat ketersediaan hari ini, simulasikan tanggal sewa, dan booking online dalam hitungan menit.</p>
 
         <div class="relative mt-8 max-w-md">
